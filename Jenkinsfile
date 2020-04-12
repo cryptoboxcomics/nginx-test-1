@@ -9,6 +9,8 @@ pipeline {
                 sh """
                     sudo pip3 install molecule
                     sudo pip3 install docker
+                    sudo systemctl start docker
+                    sudo systemctl enable docker
                 """
             } //steps
         } //stage
