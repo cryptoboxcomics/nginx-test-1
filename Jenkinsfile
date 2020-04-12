@@ -7,8 +7,10 @@ pipeline {
            stage ("Set up") {
                steps {
                     sh """
-                    sudo pip3 install molecule
-                    sudo pip3 install docker
+                     python3 -m venv env
+                    source ./env/bin/activate 
+                    python -m pip install molecule
+                    python -m pip install docker
                 """
                }//steps
            }//stage
