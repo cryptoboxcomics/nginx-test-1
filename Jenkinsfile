@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label "generic"
+        label "generic2"
     } //agent
     stages {
 
