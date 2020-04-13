@@ -29,6 +29,8 @@ pipeline {
         stage("Create docker image for testing") {
             steps {
                 sh """
+                    LC_ALL=en_US
+                    export LC_ALL
                     source ./env/bin/activate 
                     python3 -m molecule create
                 """
@@ -37,6 +39,8 @@ pipeline {
         stage("Apply Ansible role to docker image") {
             steps {
                 sh """
+                    LC_ALL=en_US
+                    export LC_ALL
                     source ./env/bin/activate 
                     python3 -m molecule converge
                 """
